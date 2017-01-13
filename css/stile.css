@@ -1,0 +1,42 @@
+.navbar{
+	border-radius:0;
+}
+
+.navbar-brand img{
+	display: inline;
+	width:30px;
+}
+
+.newsHolder{
+	margin:0 auto;
+	padding:0;
+	text-align:center;
+}
+
+.fa-spin{
+	color:#FF8B02;
+}
+
+footer{
+	background-color: #aaa;
+	bottom:0;
+	box-model:content-box;
+	position: fixed;
+	width:100%;
+}
+
+footer address{
+	font-size:12px;
+	font-family: sans-serif;
+	margin: 5px;
+	text-align:center;
+}
+#waiter{
+	margin-top:30%;
+}
+
+#waiter p{
+	color:#666;
+	font-size:18px;
+	margin-top:10px;
+}
