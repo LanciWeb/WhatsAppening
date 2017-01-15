@@ -15,6 +15,7 @@
 
 .fa-spin{
 	color:#FF8B02;
+	font-size:130px;
 }
 
 footer{
@@ -31,6 +32,41 @@ footer address{
 	margin: 5px;
 	text-align:center;
 }
+
+#waiter{
+	margin-top:10%;
+}
+
+#waiter p{
+	color:#666;
+	font-size:28px;
+	margin-top:10px;
+}
+
+/*MEDIA QUERY TABLET */
+@media screen and (max-width: 767px){
+
+}
+
+/* MEDIA QUERY MOBILE LANDSCAPE */
+@media screen and (max-width:640px){
+
+.fa-spin{
+	font-size:100px;
+}		
+	
+#waiter{
+	margin-top:8%;
+}
+	
+}
+
+/*MEDIA QUERY MOBILE PORTRAIT*/
+@media screen and (max-width: 600px){
+.fa-spin{
+	font-size:70px;
+}	
+	
 #waiter{
 	margin-top:30%;
 }
@@ -39,4 +75,6 @@ footer address{
 	color:#666;
 	font-size:18px;
 	margin-top:10px;
+}
+	
 }
