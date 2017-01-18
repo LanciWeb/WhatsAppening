@@ -1,0 +1,18 @@
+article.rep{
+	text-align:left;
+	background-color:#fff;
+	border: 2px solid #000;
+	border-radius:5px;
+	box-shadow:5px 5px 5px #666;
+	margin-bottom:10px;
+	overflow:auto;
+	padding:10px 20px;
+}
+
+article.rep p{
+padding:0;
+}
+
+article.rep h2{
+	padding:10px 0;
+}

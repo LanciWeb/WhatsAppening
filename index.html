@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="author" content="Marco Lancellotti" />
-		<meta name="description" content="WhatsAppening è un'applicazione che consente di essere sempre informati in tempo reale sugli ultimi avvenimenti dal mondo!" />
+		<meta name="description" content="WhatsAppening &egrave; un'applicazione che consente di essere sempre informati in tempo reale sugli ultimi avvenimenti dal mondo!" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>WhatsAppening</title>
 		<link href="http://msvd.ru/userfiles/newslogo.png" type="image/png" rel="icon" />
@@ -11,52 +11,59 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" /> -->
-		<base href="http://www.marcolanci.it/whatsappening/" target="_blank" />
+		<base href="http://www.marcolanci.it/whatsappening/" />
 		<link rel="stylesheet" type="text/css" href="css/stile.css" />
 		
 	</head>
 	<body>
-		<header>
-			<nav class="navbar navbar-inverse">
-			  <div class="container-fluid">
-				<div class="navbar-header">
-				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span> 
-				  </button>
-				 
-			  <a class="navbar-brand" href="#"><img src="http://msvd.ru/userfiles/newslogo.png" alt=""/>WhatsAppening</a>
-				</div>
-				<div class="collapse navbar-collapse" id="myNavbar">
-				  <ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">Corriere della Sera</a></li>
-					<li><a href="#">ANSA</a></li> 
-					<li><a href="#">La Repubblica</a></li> 
-				  </ul>
-				</div>
-			  </div>
-			</nav>
-		</header>
-	<main class="container-fluid">
-		<div class="row">
-				<div class="col-xs-12 newsHolder" id="newsHolder">
-					<div id="waiter">
-						<i class="fa fa-spinner fa-spin fa-5x"></i>
-						<p>Sto cercando nuove notizie...</p>
+			<header>
+				<nav class="navbar navbar-inverse">
+				  <div class="container-fluid">
+					<div class="navbar-header">
+					  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span> 
+					  </button>
+					 
+				  <a class="navbar-brand" href="#"><img src="http://msvd.ru/userfiles/newslogo.png" alt=""/>WhatsAppening</a>
 					</div>
-				</div>
-			</div>
-		<div>
-	</main>
-	<footer class="container-fluid">
-			<div class="row">
-				<div class="col-xs-12">
-					<address>LanciWeb&#169; 2017 - All rights reserved</address>
-				</div>
-			</div>
-	</footer>
+					<div class="collapse navbar-collapse" id="myNavbar">
+					  <ul class="nav navbar-nav">
+						<li><a href="" id="CdS">Corriere della Sera</a></li>
+						<!-- <li><a href="#">ANSA</a></li>-->
+						<li><a href="" id="Rep">La Repubblica</a></li> 
+					  </ul>
+					</div>
+				  </div>
+				</nav>
+			</header>
+			<main class="container-fluid">
+				<div class="row">
+						<div class="col-md-offset-2 col-md-8 newsHolder" id="newsHolder">
+							<div id="waiter">
+								<i class="fa fa-spinner fa-spin fa-5x"></i>
+								<p>Sto cercando nuove notizie...</p>
+							</div>
+							<div id="waiterModal">
+								<i class="fa fa-spinner fa-spin fa-5x"></i>
+								<p>Sto cercando nuove notizie...</p>
+							</div>
+							<div id="errorBox">
+								<i class="fa fa-chain-broken fa-5x"></i>
+								<p>Impossibile caricare le notizie!</p>
+							</div>
+						</div>
+					</div>
+				<div>
+			</main>
+			<footer class="container-fluid">
+					<div class="row">
+						<div class="col-xs-12">
+							<address>LanciWeb&#169; 2017 - All rights reserved</address>
+						</div>
+					</div>
+			</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<!-- <script src="jquery-3.1.1.min.js"></script> -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

@@ -7,7 +7,7 @@ var first = true;
 
 function refresh(){
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', 'php/rss_caller.php?url=http://xml.corriereobjects.it/rss/homepage.xml', true);
+	xhr.open('GET', 'php/rss_caller.php?feed=http://xml.corriereobjects.it/rss/homepage.xml', true);
 	xhr.onreadystatechange = function(){
 		if(this.readyState = 4){
 			if(this.status = 200){

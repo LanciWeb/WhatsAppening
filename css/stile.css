@@ -1,29 +1,27 @@
-.navbar{
-	border-radius:0;
+@import url("corriere_della_sera.css");
+@import url("la_repubblica.css");
+
+body{
+	/* background-image: url('../img/paper.jpg'); */
+	background-position: right top;
+	background-attachment: fixed;
 }
 
-.navbar-brand img{
-	display: inline;
-	width:30px;
+img{
+	max-width:100vw;
 }
 
-.newsHolder{
-	margin:0 auto;
-	padding:0;
-	text-align:center;
-}
-
-.fa-spin{
-	color:#FF8B02;
-	font-size:130px;
+figure>hr{
+	margin:0
 }
 
 footer{
 	background-color: #aaa;
 	bottom:0;
-	box-model:content-box;
+	/* box-model:content-box; */
 	position: fixed;
 	width:100%;
+	z-index:1;
 }
 
 footer address{
@@ -33,14 +31,76 @@ footer address{
 	text-align:center;
 }
 
+header{
+	position:fixed;
+	width:100%;
+	z-index:1;
+}
+
+header .navbar{
+	border-radius:0;
+	margin-bottom:0;
+}
+
+nav ul li{
+	cursor: pointer;
+}
+
+.fa-chain-broken{
+	color:#f00;
+	font-size:5.9vw;
+}
+
+.fa-spinner{
+	color:#FF8B02;
+	font-size:130px;
+}
+
+.navbar-brand img{
+	display: inline;
+	width:30px;
+}
+
+.newsHolder{
+	margin-top:55px;
+	padding:0;
+	text-align:center;
+}
+
+#errorBox{
+	background-color:rgba(255,0,0,0.5);
+	border: 4px dashed #f00;
+	color:#f00;
+	display:none;
+	font-size:1.8vw;
+	font-weight:bold;
+	left: 25%;
+	padding:20px;
+	position:fixed;
+	text-align:center;
+	top:30%;
+	width:50%;
+	z-index:1;
+}
+
 #waiter{
 	margin-top:10%;
 }
 
-#waiter p{
+#waiter p, #waiterModal p{
 	color:#666;
 	font-size:28px;
 	margin-top:10px;
+}
+
+#waiterModal{
+	background-color: rgba(255,255,255,0.8);
+	border-radius: 5px;
+	display:none;
+	left:5vw;
+	position: fixed;
+	top: 25vh;
+	width:90vw;
 }
 
 /*MEDIA QUERY TABLET */
@@ -55,7 +115,7 @@ footer address{
 	font-size:100px;
 }		
 	
-#waiter{
+#waiter, #errorBox{
 	margin-top:8%;
 }
 	
@@ -63,17 +123,31 @@ footer address{
 
 /*MEDIA QUERY MOBILE PORTRAIT*/
 @media screen and (max-width: 600px){
-.fa-spin{
+.fa-spinner{
 	font-size:70px;
 }	
+
+.fa-chain-broken{
+	font-size:10vw;
+}
+
+#errorBox{
+	font-size:5vw;
+	font-weight:bold;
+	left: 20%;
+	padding:20px;
+	top:30%;
+	width:60%;
+	
+}
 	
 #waiter{
 	margin-top:30%;
 }
 
-#waiter p{
+#waiter p, #waiterModal p{
 	color:#666;
-	font-size:18px;
+	font-size:14px;
 	margin-top:10px;
 }
 	
