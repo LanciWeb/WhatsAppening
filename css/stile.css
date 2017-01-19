@@ -1,5 +1,7 @@
+@import url("gazzetta_dello_sport.css");
 @import url("corriere_della_sera.css");
 @import url("la_repubblica.css");
+@import url("ansa.css");
 
 body{
 	/* background-image: url('../img/paper.jpg'); */

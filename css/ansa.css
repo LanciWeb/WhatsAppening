@@ -1,0 +1,28 @@
+.ansa, .ansa h2{
+	background-color: #27AB57;
+	border: 2px solid #fff;
+	color: #fff;
+	text-align:left;
+	padding:10px 20px;
+}
+
+.ansa h2{
+	border-width:0px;
+	padding:10px 0;
+}
+
+.logoAnsa, .ansa article{
+	background-color: #27AB57;
+	border: 2px solid #fff;
+}
+
+
+.ansa a{
+	color: #ffa24b;
+}
+
+.ansa address{
+	border-color:#fff;
+	border-width:2px;
+	margin-top:1vh;
+}

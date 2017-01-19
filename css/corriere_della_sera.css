@@ -35,7 +35,7 @@ article h2{
 }
 
 
-article p img{
+article img{
 	border: 2px solid #FF7D02;
 	border-radius:5px;
 	display: inline-block;
@@ -93,7 +93,7 @@ article h2{
 }
 
 
-article p img{
+article img{
 	border: 2px solid #FF7D02;
 	border-radius:5px;
 	display: inline-block;
@@ -135,15 +135,15 @@ article h2{
 	text-align: left;
 }
 
+article img{
+	width:99%;
+	margin-bottom:5px;
+}
 
 article p{
 	font-size:14px;
 }
 
-article p img{
-	width:99%;
-	margin-bottom:5px;
-}
 
 article address{
 	border-bottom:1px dotted #444;

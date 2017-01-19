@@ -17,6 +17,7 @@ function Feed(name, url, format, topic='generic'){
 var feedCorriere = new Feed('Corriere della Sera', 'http://xml.corriereobjects.it/rss/homepage.xml','xml');
 var feedRepubblica = new Feed('La Repubblica', 'http://www.repubblica.it/rss/homepage/rss2.0.xml','xml');
 var feedANSA = new Feed('ANSA', 'http://www.ansa.it/sito/notizie/topnews/topnews_rss.xml', 'xml');
+var feedGazzettaSport = new Feed('Gazzetta dello Sport', 'http://www.gazzetta.it/rss/home.xml', 'xml');
 
 //ALL'AVVIO 
 
@@ -30,6 +31,9 @@ switch(preferito.name){
 	break;
 	case 'ANSA':
 	$('#ANSA').parent().addClass('active');
+	break;
+	case 'Gazzetta dello Sport':
+	$('#GdS').parent().addClass('active');
 	break;
 }
 var waiterBox = $("#waiter");
@@ -65,9 +69,10 @@ function display(data, fonte){
 
 function parsingXML(fonte, xml){
 	//creazione titolo e logo
-		var $logoFonte = xml.find('image>url').text();
-		var $linkLogo = xml.find('image>link').text();
 		var $figure = $('<figure></figure>').addClass('logoFonte');
+		if (fonte.name === 'ANSA') $figure.addClass('logoAnsa');
+		var $logoFonte = (fonte.name !== 'ANSA') ? xml.find('image>url').text() : 'img/logo_ansa.png';
+		var $linkLogo = (fonte.name !== 'ANSA') ? xml.find('image>link').text() : xml.find('channel>link').text();
 		var $aLogo = $('<a></a>').attr('href', $linkLogo).attr('target', '_blank');
 		var $imgLogo = $('<img />').attr('src', $logoFonte).attr('alt',fonte.name).attr('title',fonte.name);
 		var $hr = $('<hr/>');
@@ -78,7 +83,6 @@ function parsingXML(fonte, xml){
 		//creazione articoli
 		xml.find('item').each(function(){
 			var $article = $('<article></article>');
-			if(fonte.name === 'La Repubblica') $article.addClass('rep');
 			var $articleTitle = $(this).find('title').text();
 			var $h2 = $('<h2></h2>').addClass('articleTitle').text($articleTitle);
 			var $articleContent = $(this).find('description').text();
@@ -87,6 +91,14 @@ function parsingXML(fonte, xml){
 			var $a = $('<a></a>').text('leggi tutto >>').attr('href',$link).addClass();
 			var $pubdate = $('<time></time>').text(formattaData($(this).find('pubDate').text()));
 			$address.append($pubdate).append($a);
+			if(fonte.name === 'La Repubblica') $article.addClass('rep');
+			if(fonte.name === 'ANSA') $article.addClass('ansa');
+			if(fonte.name ==='Gazzetta dello Sport'){
+				$article.addClass('gazzSport');
+				var $enclosure  = $(this).find('enclosure').filter(':last').attr('url');
+				var $immagine = $('<img />').attr('src',$enclosure);
+				$h2.append($immagine);
+			}
 			$article.append($h2).append($articleContent).append($address);
 			$("#newsHolder").append($article).fadeIn('slow');
 		});
@@ -128,6 +140,11 @@ $('nav ul li').on('click', function(e){
 		case 'ANSA':
 		$('#ANSA').parent().addClass('active');
 		localStorage.preferito = JSON.stringify(feedANSA);
+		refresh(feedANSA);
+		break;
+		case 'GdS':
+		$('#GdS').parent().addClass('active');
+		localStorage.preferito = JSON.stringify(feedGazzettaSport);
 		refresh(feedANSA);
 		break;
 	}
